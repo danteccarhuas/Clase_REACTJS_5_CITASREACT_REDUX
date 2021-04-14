@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+
+//Redux
+import {connect} from 'react-redux';
+import {borrarCita} from '../actions/citasActions';
+
 class Cita extends Component {
 
     eliminarCita = ()=>{
@@ -43,4 +48,4 @@ Cita.propTypes = {
     borrarCita: PropTypes.func.isRequired
 }
 
-export default Cita;
+export default connect(null, {borrarCita}) (Cita);
